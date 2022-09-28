@@ -41,7 +41,6 @@ def obtener_nombres_masculinos():
             nombre_personaje = personaje["nombre"]
             print("Nombre: {0} ".format(nombre_personaje))
 
-
 '''
 def obtener_nombres_masculinos(lista_personajes:list):
     for personaje  in lista_personajes:
