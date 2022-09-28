@@ -38,7 +38,9 @@ def validar_entero(numero_str:str)->int:
 
 def listar_heroes(lista_heroes:list):
     '''
-    
+    Recibe la lista de personajes y un numero de los primeros N heroes
+
+    Devuelve la lista con esos N primeros personajes
     '''
     numero_heroes = input("Ingrese el numero de los primeros N heroes ")
     numero_heroes = validar_entero(numero_heroes)
@@ -57,7 +59,6 @@ def listar_heroes(lista_heroes:list):
 lista_personajes = abrir_archivo()
 #listar_heroes(lista_personajes)
 
-
 def buscar_maximo(lista_maximo:list, key:str):
     maximo = 0
     for i in range(len(lista_maximo)):
@@ -74,6 +75,11 @@ def buscar_minimo(lista_minimo:list, key:str):
     return minimo
 
 def ordenar_listar_heroes_altura(lista_heroes_desordenada:list)->list:
+    '''
+    Recibe la lista de heroes
+
+    Devuelve la ordenada segun la altura, de manera ascendente o descendente segun el usuario quiera
+    '''
     manera_a_ordenar = input("La quiere ordenar de manera ascendente(asc) o de manera descendente(desc)? ")
     lista_heroes_copiada = lista_heroes_desordenada.copy()
     lista_heroes_ordenada = []
@@ -101,6 +107,11 @@ def ordenar_listar_heroes_altura(lista_heroes_desordenada:list)->list:
 #print(ordenar_listar_heroes_altura(lista_personajes))
 
 def ordenar_listar_heroes_fuerza(lista_heroes_desordenada:list)->list:
+    '''
+    Recibe la lista de heroes
+
+    Devuelve la ordenada segun la fuerza, de manera ascendente o descendente segun el usuario quiera
+    '''
     manera_a_ordenar = input("La quiere ordenar de manera ascendente(asc) o de manera descendente(desc)? ")
     lista_heroes_copiada = lista_heroes_desordenada.copy()
     lista_heroes_ordenada = []
@@ -129,7 +140,9 @@ def ordenar_listar_heroes_fuerza(lista_heroes_desordenada:list)->list:
 
 def calcular_promedio_key_numerica(lista_heroes:list, key:str, condicion:str)->list:
     '''
-    
+    Recibe la lista de personajes, una clave y una condicion (mayor) o (menor)
+
+    Devuelve una lista nueva
     '''
     lista_por_condicion = []
     cantidad_heroes = len(lista_heroes)
@@ -155,9 +168,10 @@ def calcular_promedio_key_numerica(lista_heroes:list, key:str, condicion:str)->l
 
 def buscar_heroes_por_inteligencia(lista_heroes:list, condicion:str)->list:
     '''
-    
-    '''
+    Recibe la lista de personajes y la condicion, (good), (average), (high)
 
+    Devuelve una lista nueva con los personajes con la condicion que el usuario quiera
+    '''
     lista_por_inteligencia = []
 
     for heroe in lista_heroes:
@@ -171,24 +185,10 @@ def buscar_heroes_por_inteligencia(lista_heroes:list, condicion:str)->list:
             lista_por_inteligencia.append(heroe)
 
     return lista_por_inteligencia
-    #     inteligencia_heroe = heroe["inteligencia"]
-
-    #     if(inteligencia_heroe == "good"):
-    #         lista_por_inteligencia.append(heroe)
-
-    #     elif(inteligencia_heroe == "average"):
-    #         lista_por_inteligencia.append(heroe)
-            
-    #     elif(inteligencia_heroe == "high"):
-    #         lista_por_inteligencia.append(heroe)
-
-    # return lista_por_inteligencia
 #-----------------------------------------5----------------------------------------------------
-print(buscar_heroes_por_inteligencia(lista_personajes,"average"))
+#print(buscar_heroes_por_inteligencia(lista_personajes,"average"))
 
-#  5-  Buscar héroes por inteligencia [good, average, high] y listar en consola los que cumplan dicha búsqueda.
-
-
+# 5- Buscar héroes por inteligencia [good, average, high] y listar en consola los que cumplan dicha búsqueda.
 
 
 
@@ -197,31 +197,13 @@ print(buscar_heroes_por_inteligencia(lista_personajes,"average"))
 
 
 
-def menu():
-    while True:
-        opcion = input("1- Listar los primeros N héroes \n2- Ordenar y Listar héroes por altura \n3- Ordenar y Listar héroes por fuerza \n4- Calcular mayores a la altura promedio \n5- Calcular menores a la altura promedio \n6- Calcular mayores al peso promedio \n7- Calcular menores al peso promedio \n8- Calcular mayores a la fuerza promedio \n9- Calcular menores a la fuerza promedio \n10- Buscar héroes por inteligencia (good) \n11- Buscar héroes por inteligencia (average) \n12- Buscar héroes por inteligencia (high)")
 
-        if(opcion == "1"):
-            listar_heroes(lista_personajes)
-        elif(opcion == "2"):
-            ordenar_listar_heroes_altura(lista_personajes)
-        elif(opcion == "3"):
-            ordenar_listar_heroes_fuerza(lista_personajes)
-        elif(opcion == "4"):
-            calcular_promedio_key_numerica(lista_personajes, "altura", "mayor")
-        elif(opcion == "5"):
-            calcular_promedio_key_numerica(lista_personajes, "altura", "menor")
-        elif(opcion == "6"):
-            calcular_promedio_key_numerica(lista_personajes, "peso", "mayor")
-        elif(opcion == "7"):
-            calcular_promedio_key_numerica(lista_personajes, "peso", "menor")
-        elif(opcion == "8"):
-            calcular_promedio_key_numerica(lista_personajes, "fuerza", "mayor")
-        elif(opcion == "9"):
-            calcular_promedio_key_numerica(lista_personajes, "fuerza", "menor")   
-        elif(opcion == "10"):
-            buscar_heroes_por_inteligencia(lista_personajes, )
-#print(calcular_promedio_key_numerica(lista_personajes, "altura", "mayor"))
 
+def exportar_csv():
+    pass
 #-----------------------------------------6---------------------------------------------------
 # 6-  Exportar a CSV la lista de héroes ordenada según opción elegida anteriormente [1-4]
+
+
+
+
